@@ -1,9 +1,18 @@
 def recomendar_sala (pessoas, tipo_de_reunião):
-    if pessoas <=5 and tipo_de_reunião=='normal':
+    if pessoas <=5:
         return ('a reuiniaõ sera em sala pequena')
-    elif pessoas >=6 and pessoas <15 and tipo_de_reunião=='normal':
+    elif pessoas <=15:
         return('a reuiniaõ sera em sala media')
-    else: pessoas >=15 and tipo_de_reunião=='normal' or tipo_de_reunião=='executivo'
+    elif pessoas>15:
+        return ('a reunião sera na sala executiva')
+    else: tipo_de_reunião == 'executivo'
     return('a reunião sera na sala executiva')
 pessoas= int(input('quantas pessoas vão participar da reunião:'))
 tipo_de_reunião= (input('reunião sera executiva ou normal:'))
+if pessoas <=0:
+    print ('numero de participantes invalido')
+elif tipo_de_reunião not in ['normal','executiva']:
+    print('tipo de reunião invalida')
+else:
+    recomendar_sala = recomendar_sala(pessoas, tipo_de_reunião)
+    print (f'a sala recomendada é:{recomendar_sala}')
