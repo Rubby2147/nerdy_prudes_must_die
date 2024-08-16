@@ -5,3 +5,5 @@ def recomendar_sala (pessoas, tipo_de_reunião):
         return('a reuiniaõ sera em sala media')
     else: pessoas >=15 and tipo_de_reunião=='normal' or tipo_de_reunião=='executivo'
     return('a reunião sera na sala executiva')
+pessoas= int(input('quantas pessoas vão participar da reunião:'))
+tipo_de_reunião= (input('reunião sera executiva ou normal:'))
