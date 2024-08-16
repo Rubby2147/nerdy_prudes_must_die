@@ -1,0 +1,1 @@
+departamento = input('qual seu deparamento:desenvolvimento de software,markting,recursos humanos, epsquisa de densenvolvimento')

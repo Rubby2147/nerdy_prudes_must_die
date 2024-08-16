@@ -5,3 +5,4 @@ if pessoas <=5 and tipo_de_reunião=='normal':
 elif pessoas >=6 and pessoas <15 and tipo_de_reunião=='normal':
     print('a reuiniaõ sera em sala media')
 else: pessoas >=15 and tipo_de_reunião=='normal' or tipo_de_reunião=='executivo'
+print('a reuiniaõ sera em sala executiva')
