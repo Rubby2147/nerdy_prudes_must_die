@@ -1,6 +1,5 @@
 atk = int(input('quantos ataques diferentes uns dos outros vai fazer:'))
 ac=int(input('qual ac quer acertar:'))
-for atk in atk:
      
     dado= int(input('quantos dados vai rolar:'))
     ataques= int(input('quantos ataques iguais vai fazer:'))
@@ -9,3 +8,5 @@ for atk in atk:
     crit =int(input('dano em um critico:'))
     hc = (1-pow(((ac-bonus)/20),dado))
     ataque1 =(ataques*(hc*(dano))+(dado/20)*crit)
+fatores = list (dado, ataques,bonus,dano,crit,hc, ataque)
+for atk in fatores:
