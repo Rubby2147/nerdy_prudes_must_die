@@ -3,7 +3,6 @@ def calc_damage (dado,ataques,bonus,dano,crit,ac):
     ataque=(ataques*(hc*(dano))+(dado/20)*crit)
     return ataque
 
-print('='*50)
 ac=int(input('qual ac quer acertar:'))
 atk = int(input('quantos ataques diferentes uns dos outros vai fazer:'))
 
