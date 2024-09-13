@@ -24,17 +24,17 @@ for x in (range(atk)):
 
     hc = (1-pow(((ac-bonus)/20),dado))
     
-    if wm == 'vex' and dado>1:
-         wmd = ((ataques-1)*(hc*(dano))+((dado*cc)/20)*crit)*0.1
-    elif wm == 'topple'and dado>1:
-         wmd = ((ataques-1)*(hc*(dano))+((dado*cc)/20)*crit)*0.1*0.4
+    if wm == 'vex' and dado>2:
+         wmd = ((ataques-1)*(hc*(dano))+(dado*(cc/20)*crit))*0.1
+    elif wm == 'topple'and dado>2:
+         wmd = ((ataques-1)*(hc*(dano))+(dado*(cc/20)*crit))*0.1*0.4
     elif wm =='graze':
-         dg=int(input('dano do graze:'))
-         wmd = ((1-hc)*dg)*ataques
+        dg=int(input('dano do graze:'))
+        wmd = ((1-hc)*dg)*ataques
     else:
          wmd = 0
 
-    fatores  = [dado,ataques,bonus,dano,cc,crit,wmd]
+    fatores  = [dado,ataques,bonus,dano,cc,crit]
 
     resultado = [calc_damage(*fatores,ac)]
     resultados.append(resultado)
