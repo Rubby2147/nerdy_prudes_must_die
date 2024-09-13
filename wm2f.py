@@ -1,10 +1,3 @@
-def hc (dado,bonus,ac):
-    return (1-pow(((ac-bonus)/20),dado))
-
-def calc_damage(dado,ataques,dano,crit,cc,wmd):
-    ataque=(ataques*(hc*(dano))+((dado*(cc/20))*crit))+wmd
-    return ataque
-
 print('='*50)
 ac=int(input('qual ac quer acertar:'))
 atk = int(input('quantos ataques diferentes uns dos outros vai fazer:'))
@@ -22,10 +15,13 @@ for x in (range(atk)):
     gwm= input('você tem mastre de armas grandes:(s/n)')
     kye= input('você ganha vantagem se errar:(s/n)')
     print('='*50)
-    
-    if wm == 'vex' and dado>2:
+
+    hc=(1-pow(((ac-bonus)/20),dado))
+    ataque=float((ataques*(hc*(dano))+((dado*(cc/20))*crit)))
+
+    if wm == 'vex' and dado<2:
          wmd = ((ataques-1)*(hc*(dano))+(dado*(cc/20)*crit))*0.1
-    elif wm == 'topple'and dado>2:
+    elif wm == 'topple'and dado<2:
          wmd = ((ataques-1)*(hc*(dano))+(dado*(cc/20)*crit))*0.1*0.4
     elif wm =='graze':
         dg=int(input('dano do graze:'))
@@ -33,9 +29,7 @@ for x in (range(atk)):
     else:
          wmd = 0
 
-    fatores  = [dado,ataques,dano,crit,cc,wmd]
-
-    resultado = [calc_damage(*fatores,hc)]
+    resultado = [ataque+wmd]
     resultados.append(resultado)
 total_de_dano =  resultados
  
@@ -51,7 +45,7 @@ if gwm =="s":
 else:
      print
 
-if sm == "s":
+if sm == "s" and dado <1:
       print('+',((ataques-1)*(hc*(dano))+((dado*(cc/20)*crit)*0.1*0.4)))
 else:
       print
