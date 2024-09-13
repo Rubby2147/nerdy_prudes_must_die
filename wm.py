@@ -49,17 +49,17 @@ print ('por favor faça a soma final')
 print ('seu dano por turno é:',total_de_dano)
 
 if gwm =="s":
-    print('+',((ataques*(hc*(dano))+((dado+cc)/20)*crit)+(1-hc)*wmd)*((dado*cc))/20)
+    print('+',((ataques*(hc*(dano))+((dado*(cc/20)*crit)+(1-hc)*wmd)*((dado*cc))/20))
 else:
      print
 
 if sm == "s":
-      print('+',((ataques-1)*(hc*(dano))+((dado*cc)/20)*crit)*0.1*0.4)
+      print('+',((ataques-1)*(hc*(dano))+((dado*(cc/20)*crit)*0.1*0.4))
 else:
       print
 
 if kye == 's':
-    print('+',((ataques-1)*(hc*(dano))+((dado*cc)/20)*crit)*(1-hc)*0.1)
+    print('+',((ataques-1)*(hc*(dano))+((dado*(cc/20)*crit)*(1-hc)*0.1))
 else:
      print
 
