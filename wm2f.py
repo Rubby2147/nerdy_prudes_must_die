@@ -20,9 +20,9 @@ for x in (range(atk)):
     ataque=float((ataques*(hc*(dano))+((dado*(cc/20))*crit)))
 
     if wm == 'vex' and dado<2:
-         wmd = ((ataques-1)*(hc*(dano))+(dado*(cc/20)*crit))*0.1
+         wmd = (((ataques-1)*(hc+(hc*pow(hc,2)))*(dano))+hc*((dado+1)*(cc/20)*crit))
     elif wm == 'topple'and dado<2:
-         wmd = ((ataques-1)*(hc*(dano))+(dado*(cc/20)*crit))*0.1*0.4
+         wmd = (((ataques-1)*(hc+(hc*pow(hc,2)))*(dano))+hc*((dado+1)*(cc/20)*crit))*0.4
     elif wm =='graze':
         dg=int(input('dano do graze:'))
         wmd = ((1-hc)*dg)*ataques
