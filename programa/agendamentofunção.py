@@ -16,3 +16,4 @@ elif tipo_de_reunião not in ['normal','executiva']:
 else:
     recomendar_sala = recomendar_sala(pessoas, tipo_de_reunião)
     print (f'a sala recomendada é:{recomendar_sala}')
+
