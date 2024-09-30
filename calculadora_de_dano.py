@@ -1,5 +1,5 @@
 quer=input('quer calcular (s/n):')
-while quer=='s':
+while quer=='s' or quer== '1':
     print('='*50)
     ac=int(input('qual ac quer acertar:'))
     atk = int(input('quantos ataques diferentes uns dos outros vai fazer:'))
@@ -20,30 +20,30 @@ while quer=='s':
         print('='*50)
 
         hc=(1-pow(((ac-bonus)/20),dado))
-        ataque=float(ataques*((hc*(dano))+((dado*(cc/20))*crit)))
+        ataque=float(ataques*(hc*dano+((dado*(cc/20))*crit)))
         
         dano_uma_vez= dano_em_um_atk*(pow(hc,ataques)) 
 
         if wm == 'vex' and dado<2:
-             wmd = (ataques-1)*(((hc+(hc*pow(hc,2)))*(dano))+hc*((dado+1)*(cc/20)*crit))
+             wmd = float((ataques-1)*pow(hc,2)*hc*(dano+0.1*crit))
         elif wm == 'topple'and dado<2:
-         wmd = (ataques-1)*((hc+(hc*pow(hc,2)))*(dano)+hc*((dado+1)*(cc/20)*crit))*0.4
+         wmd = float((ataques-1)*pow(hc,2)*hc*(dano+0.1*crit))*0.4
         elif wm =='graze':
             dg=int(input('dano do graze:'))
             wmd = ((1-hc)*dg)*ataques
         else:
              wmd = 0
         if gwm =="s":
-            dgwm=((ataques*((hc*(dano))+((dado*(cc/20)*crit)+(1-hc)*wmd))*((dado*cc))/20))
+            dgwm=(((hc*(dano))+((dado*(cc/20)*crit)+wmd))*(ataques*(dado*cc))/20)
         else:
             dgwm=0
 
-        if kye == "s":
-            dkye=((ataques-1)*((hc+((1-hc)*pow(hc,2)))*(dano)+(1-hc)*((dado+1))*(cc/20)*crit))
+        if kye == "s" and dado<2:
+            dkye=float((ataques-1)*pow(hc,2)*(1-hc)*(dano+0.1*crit))
         else:
             dkye=0
-        if sm == "s" and dado <1:
-            dsm=(((ataques-1)*((hc+(hc*pow(hc,2)))*(dano)+hc*((dado+1)*(cc/20)*crit)))*0.4)
+        if sm == "s" and dado <1 and not wm =='vex':
+            dsm=float((ataques-1)*pow(hc,2)*hc*(dano+0.1*crit))*0.4
         else:
             dsm=0
 
