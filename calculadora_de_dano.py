@@ -25,25 +25,27 @@ while quer=='s' or quer== '1':
         dano_uma_vez= dano_em_um_atk*(pow(hc,ataques)) 
 
         if wm == 'vex' and dado<2:
-             wmd = float((ataques-1)*pow(hc,2)*hc*(dano+0.1*crit))
+             wmd = float((ataques-1)*(1-pow(hc,2))*hc*(dano+0.1*crit))
         elif wm == 'topple'and dado<2:
-         wmd = float((ataques-1)*pow(hc,2)*hc*(dano+0.1*crit))*0.4
+         wmd = float((ataques-1)*(1-pow(hc,2))*hc*(dano+0.1*crit))*0.4
         elif wm =='graze':
             dg=int(input('dano do graze:'))
             wmd = ((1-hc)*dg)*ataques
         else:
              wmd = 0
+
         if gwm =="s":
             dgwm=(((hc*(dano))+((dado*(cc/20)*crit)+wmd))*(ataques*(dado*cc))/20)
         else:
             dgwm=0
 
         if kye == "s" and dado<2:
-            dkye=float((ataques-1)*pow(hc,2)*(1-hc)*(dano+0.1*crit))
+            dkye=float((ataques-1)*(1-pow(hc,2))*(1-hc)*(dano+0.1*crit))
         else:
             dkye=0
+
         if sm == "s" and dado <1 and not wm =='vex':
-            dsm=float((ataques-1)*pow(hc,2)*hc*(dano+0.1*crit))*0.4
+            dsm=float((ataques-1)*(1-pow(hc,2))*hc*(dano+0.1*crit))*0.4
         else:
             dsm=0
 
