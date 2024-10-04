@@ -14,7 +14,6 @@ while quer=='s' or quer== '1':
         crit =float(input('dano em um critico:'))
         wm= input('qual sua weapon mastery:')
         sm= input('você tem mestre de escudo (s/n):')
-        gwm= input('você tem mastre de armas grandes (s/n):')
         kye= input('você ganha vantagem se errar (s/n):')
         dano_em_um_atk= float(input('dano em um ataque só:'))
         print('='*50)
@@ -25,31 +24,26 @@ while quer=='s' or quer== '1':
         dano_uma_vez= dano_em_um_atk*(pow(hc,ataques)) 
 
         if wm == 'vex' and dado<2:
-             wmd = float((ataques-1)*(1-pow(hc,2))*hc*(dano+0.1*crit))
+             wmd = float((ataques-1)*(1-pow(hc,2))*dano)*pow(hc,(ataques-1))
         elif wm == 'topple'and dado<2:
-         wmd = float((ataques-1)*(1-pow(hc,2))*hc*(dano+0.1*crit))*0.4
+         wmd = float((ataques-1)*(1-pow(hc,2))*dano*pow(hc,(ataques-1)))*0.4
         elif wm =='graze':
             dg=int(input('dano do graze:'))
             wmd = ((1-hc)*dg)*ataques
         else:
              wmd = 0
 
-        if gwm =="s":
-            dgwm=(((hc*(dano))+((dado*(cc/20)*crit)+wmd))*(ataques*(dado*cc))/20)
-        else:
-            dgwm=0
-
         if kye == "s" and dado<2:
-            dkye=float((ataques-1)*(1-pow(hc,2))*(1-hc)*(dano+0.1*crit))
+            dkye=float((ataques-1)*(1-pow(hc,2))*dano)*pow(1-hc,(ataques-1))
         else:
             dkye=0
 
         if sm == "s" and dado <1 and not wm =='vex':
-            dsm=float((ataques-1)*(1-pow(hc,2))*hc*(dano+0.1*crit))*0.4
+            dsm=float((ataques-1)*(1-pow(hc,2))*pow(hc,(ataques-1)*dano))*0.4
         else:
             dsm=0
 
-        resultado = [ataque+wmd+dano_uma_vez+dkye+dgwm+dsm]
+        resultado = [ataque+wmd+dano_uma_vez+dkye+dsm]
         resultados.append(resultado)
     total_de_dano =  resultados
 
