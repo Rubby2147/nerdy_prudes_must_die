@@ -1,12 +1,14 @@
-validas = 0
-soma = 0
-while validas<2:
-    notas = int(input('digite as notas'))
-    if notas >=0 and notas<10:
-        validas +=1
-        soma +=notas
-    else:
-        print ('notas invalidas')
+validas= 0
+notas=[]
 
-media =soma/2
-print (f'media={media}')
+while validas<4:
+    n=float(input('digite notas:'))
+    if n >0 and n<=10:
+        notas.append(n)
+        validas+=1
+    else:
+        print('invalida')
+
+print('sua notas foram:',sorted(notas))
+print('sua media foi:',sum(notas)/len(notas))
+print('sua maior nota foi:',max(notas))
